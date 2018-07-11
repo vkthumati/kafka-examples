@@ -48,5 +48,6 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic vasanth_topic
 -  kafka-topics --create --topic test_cleanup --zookeeper 127.0.0.1:2181 --config cleanup.policy=compact --partitions 3 --replication-factor 1
 
 # To alter a topic's configuration
-- kafka-topics --alter --topic test_cleanup --zookeeper 127.0.0.1:2181 --config cleanup.policy=delete
+- kafka-topics --alter --topic test_cleanup --zookeeper 127.0.0.1:2181 --config cleanup.policy=delete  (this is deprecated)
+- kafka-configs --alter --topic test_cleanup --zookeeper 127.0.0.1:2181 --config cleanup.policy=delete
 
