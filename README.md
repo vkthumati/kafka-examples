@@ -79,7 +79,7 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic vasanth_topic
 # To produce data to a compacted topic
 - kafka-console-producer --broker-list 127.0.0.1:9092 \
                          --topic employee-salary-compact \
-                         --property print.key=true \
+                         --property parse.key=true \
                          --property key.separator=, 
                          
 -- Sample data
