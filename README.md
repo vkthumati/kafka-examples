@@ -80,4 +80,9 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic vasanth_topic
 - kafka-console-producer --broker-list 127.0.0.1:9092 \
                          --topic employee-salary-compact \
                          --property print.key=true \
-                         --property key.separator=,                         
+                         --property key.separator=, 
+                         
+-- Sample data
+    123,{"John":"80000"}
+    456,{"Mark":"90000"}
+    789,{"Lisa":"95000"}
