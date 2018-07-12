@@ -68,3 +68,16 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic vasanth_topic
                --config cleanup.policy=compact \
                --config min.cleanable.dirty.ratio=0.005 \
                --config segment.ms=10000
+               
+# To read from a compacted topic
+- kafka-console-consumer --bootstrap-server 127.0.0.1:9092 \
+                         --topic employee-salary-compact \
+                         --from-beginning \
+                         --property print.key=true \
+                         --property key.separator=,
+                         
+# To produce data to a compacted topic
+- kafka-console-producer --broker-list 127.0.0.1:9092 \
+                         --topic employee-salary-compact \
+                         --property print.key=true \
+                         --property key.separator=,                         
