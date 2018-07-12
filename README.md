@@ -60,3 +60,11 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic vasanth_topic
 - kafka-topics --alter --topic test_cleanup --zookeeper 127.0.0.1:2181 --config cleanup.policy=delete  (this is deprecated)
 - kafka-configs --add-config cleanup.policy=compact --alter --entity-type topics --entity-name test_cleanup --zookeeper 127.0.0.1:2181
 
+# To create a compacted topic
+- kafka-topics --zookeeper 127.0.0.1:2181 \
+               --create --topic employee-salary-compact \
+               --partitions 1 \
+               --replication-factor 1 \
+               --config cleanup.policy=compact \
+               --config min.cleanable.dirty.ratio=0.005 \
+               --config segment.ms=10000
