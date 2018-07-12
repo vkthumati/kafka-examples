@@ -1,12 +1,18 @@
 # kafka-examples
 
-# Docker for mac, linux and windows 10
+# To create new kafka container - Docker for mac, linux and windows 10
 - docker run --rm -it -p 2181:2181 -p 3030:3030 -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 9092:9092 -e ADV_HOST=127.0.0.1 landoop/fast-data-dev
 
 # Docker Toolbox
 - docker run --rm -it -p 2181:2181 -p 3030:3030 -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 9092:9092 -e ADV_HOST=192.168.99.100 landoop/fast-data-dev
 
-# Kafka command line tools.
+# To start a kafka container that is already created and stopped
+- docker start -i <container id/name>
+
+# To stop a kafka container that is already created and running
+- docker stop -i <container id/name>
+
+# To login into docker container for Kafka command line tools.
 - docker run --rm -it --net=host landoop/fast-data-dev bash			
 
 # Connecting/login into kafka docker container
